@@ -1,44 +1,39 @@
-// Import necessary modules and models
 const mongoose = require("mongoose");
 const Subscriber = require("./models/subscriber");
 const data = require("./data");
-//-----------------------------
 require("dotenv").config();
 
-// Set up the database connection URL from environment variables
+//connect to database
+
 const dbUrl = process.env.MONGODB_URI;
 
-// Connect to the MongoDB database
 mongoose
-    .connect(dbUrl, {
-        useNewUrlParser: true,
-        useUnifiedTopology: true,
-    })
-    .then(() => {
-        console.log("Database connected"); /*once database connected then should show "Database connected" */
-    })
-    .catch((err) => {
-        console.log("Error connecting to the database", err);
-    });
+.connect(dbUrl, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+})
+.then(()=>{
+    console.log("Database connected"); /*once database connected then should shows "Database connected" */
+})
+.catch((err)=>{
+    console.log("Error to connect database", err);
+});
 
-// Refresh data in the subscribers collection
-async function refreshAllData() {
+//Refresh data in subscribers collection
+
+async function refreshData() {
     try {
-        // Delete all existing documents in the subscribers collection
-        await Subscriber.deleteMany({}, { wtimeout: 30000 });
-        console.log("Deleted all subscribers");
+        await Subscriber.deleteMany({}, {wtimeout: 30000});
 
-        // Insert new subscriber data into the subscribers collection
+        console.log("Deleted all subscribers");
         const newSubscribers = await Subscriber.insertMany(data);
         console.log(`Added ${newSubscribers.length} new subscribers`);
-    } catch (err) {
+    }catch (err) {
         console.log("Error refreshing data", err);
-    } finally {
-        // Disconnect from the database after data refresh
+    }finally {
         mongoose.disconnect();
-        console.log("Disconnected from the database");
+        console.log("Disconnected from database");
     }
 }
 
-// Call the function to refresh data in the subscribers collection
-refreshAllData();
+refreshData();

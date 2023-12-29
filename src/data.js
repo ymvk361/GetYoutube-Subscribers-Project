@@ -1,17 +1,17 @@
-// Sample data module containing an array of subscriber objects with name and subscribedChannel properties
-
-const data = [
+const data = [  
     {
-      "name": "Jeread Krus",
+      "name": "Ramchandra",
+      "subscribedChannel": "Sentex"
+    },
+    
+    {
+      "name": "Madhusudhana",
       "subscribedChannel": "CNET"
     },
+
     {
-      "name": "John Doe",
+      "name": "Narayanaya",
       "subscribedChannel": "freeCodeCamp.org"
-    },
-    {
-      "name": "Lucifer",
-      "subscribedChannel": "Sentex"
     }
   ]
 
