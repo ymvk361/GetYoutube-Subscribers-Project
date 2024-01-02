@@ -59,7 +59,7 @@ If the ID does not match, respond with a status code 400 and an error message: {
 1. src/app.js: Handles HTTP requests and responses.
 2. src/index.js: Connects to the MongoDB database and starts the server.
 3. src/createDatabase.js: Script to create the MongoDB database.
-4. src/models/subscribers.js: File not to be modified; it helps manage subscriber data.
+4. src/models/subscribers.js: it helps manage subscriber data.
 5. src/index.html: HTML file for the frontend (Add your HTML content here).
 6. src/.env: Environment variables file (Add your environment variables here).
 

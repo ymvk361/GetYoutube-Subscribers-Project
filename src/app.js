@@ -1,49 +1,51 @@
+// Importing required modules and models for the Express application
 const express = require("express");
 const Subscriber = require("./models/subscribers");
 const path = require("path");
 
-//invoking express function
- const app = express();
+// Creating an Express application instance
+const app = express();
 
-//routes
-app.get("/", (req,res)=>{
+// Route to serve the index.html file
+app.get("/", (req, res) => {
     res.sendFile(path.join(__dirname, "/index.html"));
 });
 
-//get all subscribers
-app.get("/subscribers", async (req,res,next)=>{
-    try{
+// Route to get all subscribers from the database
+app.get("/subscribers", async (req, res, next) => {
+    try {
         let subscribers = await Subscriber.find();
         res.status(200).json(subscribers);
-    }catch (err) {
+    } catch (err) {
         res.status(500);
         next(err);
     }
 });
 
-//get all subscribers name and subscribed channel
-app.get("/subscribers/names", async (req,res,next)=>{
-    try{
+// Route to get all subscribers' names and subscribed channels
+app.get("/subscribers/names", async (req, res, next) => {
+    try {
         let subscribers = await Subscriber.find(
-           {},
-           { name: 1, subscribedChannel: 1, _id: 0 }
+            {},
+            { name: 1, subscribedChannel: 1, _id: 0 }
         );
         res.status(200).json(subscribers);
-    }   catch (err) {
+    } catch (err) {
         res.status(500);
         next(err);
     }
 });
 
-//get the subscriber by id and handle 400
-app.get("/subscribers/:id", async(req,res)=>{
-    try{
+// Route to get a subscriber by ID and handle 400 error
+app.get("/subscribers/:id", async (req, res) => {
+    try {
         let id = req.params.id;
         let subscriber = await Subscriber.findById(id);
         res.status(200).json(subscriber);
-    }   catch (error) {
-        res.status(400).json({message: error.message})
+    } catch (error) {
+        res.status(400).json({ message: error.message });
     }
 });
 
+// Exporting the configured Express application
 module.exports = app;

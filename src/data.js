@@ -16,3 +16,5 @@ const data = [
   ]
 
 module.exports = data;
+
+// Exporting an array of subscriber data with name and subscribed channel information.
