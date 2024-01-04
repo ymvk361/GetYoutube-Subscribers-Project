@@ -1,6 +1,5 @@
 {
   "name": "alma_getyoutube-subscribers-project",
-  "homepage": "https://ymvk361.github.io/GetYoutube-Subscribers-Project",
   "version": "1.0.0",
   "description": "This is AlmaBetter GetYoutube_Subscribes Capstone Project for Backend Development",
   "main": "index.js",
@@ -8,8 +7,7 @@
     "start": "node index.js",
     "server": "nodemon index.js",
     "test": "jest",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "createDB": "node src/createDatabase.js"
   },
   "author": "Mohit Sharma",
   "license": "ISC",
@@ -17,8 +15,6 @@
     "cors": "^2.8.5",
     "cross-env": "^7.0.3",
     "express": "^4.18.2",
-    "gh": "^2.8.9",
-    "gh-pages": "^6.1.1",
     "mongodb": "^5.2.0",
     "mongoose": "^7.0.3",
     "morgan": "^1.10.0",

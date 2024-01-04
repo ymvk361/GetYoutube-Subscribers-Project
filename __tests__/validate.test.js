@@ -1,10 +1,10 @@
 // Load environment variables from the specified path
-require('dotenv').config({ path: ".env" });
+require('dotenv').config({ path: "./src/.env" });
 
 // Import necessary libraries and modules
 const mongoose = require("mongoose");
 const request = require("supertest");
-const app = require("../app");
+const app = require("../src/app");
 
 // Load environment variables (repeated, consider removing one)
 require("dotenv").config();

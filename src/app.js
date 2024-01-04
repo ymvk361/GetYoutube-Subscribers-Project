@@ -1,6 +1,6 @@
 // Importing required modules and models for the Express application
 const express = require("express");
-const Subscriber = require("./src/models/subscribers");
+const Subscriber = require("./models/subscribers");
 const path = require("path");
 
 // Creating an Express application instance
