@@ -41,7 +41,8 @@ Method: GET
 
 Response: An array of subscribers (an Object with only two fields: name and subscribedChannel).
 
-![image-2](https://github.com/ymvk361/GetYoutube-Subscribers-Project/assets/130222257/158ff2e3-6bba-4c11-b879-dbf498f497c0)
+![image](https://github.com/ymvk361/GetYoutube-Subscribers-Project/assets/130222257/eef73842-cd5e-45c5-855a-c1163acec7bd)
+
 
 ## 3. Get a Specific Subscriber by ID
 Endpoint: http://localhost:3000/subscribers/:id
