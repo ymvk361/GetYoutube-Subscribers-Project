@@ -50,6 +50,14 @@
         }
     </style>
     <title>YouTube Subscribers API</title>
+    <script>
+        function openSubscriberPopup() {
+            var subscriberId = prompt("Enter Subscriber ID:");
+            if (subscriberId !== null) {
+                window.location.href = "/subscribers/" + encodeURIComponent(subscriberId);
+            }
+        }
+    </script>
 </head>
 <body>
     <div class="container">
@@ -67,9 +75,9 @@
 
         <div class="boxRoutes">
             <h3>Details of Routes:</h3>
-                <li><strong>GET /subscribers:</strong> Provides an array of all subscribers in the database.</li>
-                <li><strong>GET /subscribers/names:</strong> Provides an array of subscribers with only two fields name and subscribedChannel.</li>
-                <li><strong>GET /subscribers/:id:</strong> Provides the details of a subscriber with the given ID.</li>
+                <li><strong><a href="/subscribers" target="_blank">GET /subscribers</a>:</strong> Provides an array of all subscribers in the database.</li>
+                <li><strong><a href="/subscribers/names" target="_blank">GET /subscribers/names</a>:</strong> Provides an array of subscribers with only two fields name and subscribedChannel.</li>
+                <li><strong><a href="javascript:void(0);" onclick="openSubscriberPopup()" target="_blank">GET /subscribers/:id</a>:</strong> Provides the details of a subscriber with the given ID.</li>
                 <hr style="border: none; border-top: 1pt solid #000;">
                 <li><strong>Note:</strong> During local development, the application's base URL is set to "localhost:3000." After deployment, be aware that this base URL may be modified. Despite this change, the routes within the application will remain unchanged, ensuring continued functionality and a seamless transition to the deployed environment.</li>
             </ul>

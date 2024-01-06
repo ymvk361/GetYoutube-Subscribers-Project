@@ -71,3 +71,8 @@ If the ID does not match, respond with a status code 400 and an error message: {
 5. Optionally, use src/index.html for frontend development.
 
 ### Access the specified endpoints to interact with the subscriber data. Feel free to explore the code.
+
+## Important Links
+1. Deployment Link = https://get-youtube-subscribers-project-e7gi.vercel.app/
+2. API Schema Documentation Link = https://documenter.getpostman.com/view/31796995/2s9YsGiDmq
+3. Youtube Video Link = https://youtu.be/rDd3EaKUtKA
